@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+
+<!--    fontawesome css1-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<nav class="" id="nav">
+    <div class="logo">
+        <img src="img/audio.jpg" alt="logo"/>
+    </div>
+    <button class="close" id="close"><i class="fas fa-window-close"></i></button>
+
+    <ul>
+        <li><a href="#"><button><i class="fas fa-user"></i></button></a> <span>User</span> </li>
+        <li><a href="#"><button><i class="fab fa-youtube"></i></button></a> <span>Youtube</span></li>
+        <li><a href="#"><button><i class="fas fa-cogs"></i></button></a> <span>Setting</span></li>
+        <li><a href="#"><button><i class="fas fa-sign-in-alt"></i></button></a> <span>Sing Up</span></li>
+    </ul>
+</nav>
+
+<header>
+    <button class="toggle" id="toggle">
+        <i class="fas fa-bars fa-2x"></i>
+    </button>
+    <h1> My Playlist</h1>
+</header>
+
+<div class="player-conntainer">
+    <div class="player" id="player">
+        <div class="top-bars">
+            <button id="down-btn"><i class="fas fa-chevron-down"></i></button>
+            <span>Now Playing</span>
+            <button id="menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="img-container">
+            <img src="img/audio.jpg" id="cover" alt="cover"/>
+        </div>
+        <div class="song-details">
+            <h2 id="song-title">Sample</h2>
+        </div>
+
+        <div id="progress-container" class="progress-container">
+            <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="audio">
+            <audio src="music/sample1.mp3" id="audio"></audio>
+        </div>
+
+        <div class="controls">
+            <button class="fav" id="fav"><i class="fas fa-heart"></i></button>
+            <button id="prev" class="action-btn"><i class="fas fa-backward"></i></button>
+            <button id="play" class="action-btn action-btn-big"><i class="fas fa-play"></i></button>
+            <button id="next" class="action-btn"><i class="fas fa-forward"></i></button>
+            <button id="music"><i class="fas fa-music"></i></button>
+        </div>
+
+        <div class="music-container" id="music-container">
+            <div class="header">
+                <div class="row">
+                    <button id="list"><i class="fas fa-music"></i></button>
+                    <span>Music-List</span>
+                </div>
+                <button class="close" id="list-close"><i class="fas fa-window-close"></i></button>
+            </div>
+
+            <ul>
+                <li id="sample1">
+                    <p>Smaple1</p>
+                    <i class="fas fa-play"></i>
+                </li>
+                <li id="sample2">
+                    <p>Smaple2</p>
+                    <i class="fas fa-play"></i>
+                </li>
+                <li id="sample3">
+                    <p>Smaple3</p>
+                    <i class="fas fa-play"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/app.js" type="text/javascript"></script>
+
+</body>
+</html>

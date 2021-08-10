@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(lightcoral,hotpink);
+    height: 100vh;
+    font-family: 'Style Script', cursive;
+}
+
+nav.shownav{
+    transform: translateX(0);
+}
+
+nav{
+    width: 200px;
+    height: 100vh;
+    background: linear-gradient(
+            0deg,
+            #a832a8 23.8%,
+            #db7984 98%
+    );
+    position: fixed;
+    top:0;
+    left:0;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    z-index: 3;
+}
+
+nav .logo img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+nav .logo{
+    padding:30px 0;
+    text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    padding:15px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid deepskyblue;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+nav button{
+    background: transparent;
+    border:none;
+}
+
+nav button i{
+    color: #362534;
+    font-size: 20px;
+}
+
+nav li span{
+    font-size: 20px;
+    color: navajowhite;
+}
+
+nav li::before{
+    content: '';
+    width: 100%;
+    height: 120%;
+    background: aquamarine;
+    z-index: -1;
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: 0.7;
+
+    border-radius: 0 0 20px 20px;
+
+    transform: translateY(-110%);
+    transition: 0.8s;
+}
+
+nav li:hover::before{
+    transform: translateY(0);
+    border-radius: 0;
+}
+
+nav .close{
+    position: absolute;
+    top:10px;
+    right: 10px;
+
+}
+
+header{
+    background: transparent;
+    color:white;
+    font-size: 130%;
+    padding: 40px 15px;
+    text-align: center;
+    position: relative;
+}
+
+header .toggle{
+    position: absolute;
+    top:20px;
+    left: 20px;
+
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+header .toggle i{
+    color: indianred;
+    font-size: 30px;
+}
+
+header h1{
+    padding: 0;
+    margin: 0;
+}
+
+/*player start*/
+
+.player-conntainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player{
+    width: 300px;
+    background: linear-gradient(#d2f7fa,#aee39f);
+    box-shadow: 1px 7px 30px black;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.player .top-bars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player .top-bars span{
+    font-size: 20px;
+}
+
+.top-bars button{
+    background: transparent;
+    border: none;
+
+}
+
+.top-bars button i{
+    font-size: 22px;
+    color: gray;
+}
+
+.player .img-container{
+    width:100%;
+    height: 210px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.player .img-container img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 30px firebrick,2px 3px 30px firebrick;
+
+    animation-name: myani;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+
+    animation-play-state: paused;
+}
+
+.player.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes myani  {
+    0%{
+        transform: scale(1) rotate(0);
+        box-shadow: 1px 2px 30px firebrick;
+    }
+
+    25%{
+        transform: scale(1.2) rotate(90deg);
+        box-shadow: 1px 2px 30px pink;
+    }
+
+    50%{
+        transform: scale(0.8) rotate(180deg);
+        box-shadow: 1px 2px 30px darkgreen;
+    }
+
+    75%{
+        transform: scale(1.5) rotate(270deg);
+        box-shadow: 1px 2px 30px indianred;
+    }
+
+    100%{
+        transform: scale(1) rotate(360deg);
+        box-shadow: 1px 2px 30px firebrick,2px 3px 30px firebrick;
+    }
+}
+
+.song-details {
+    text-align: center;
+    color: cornsilk;
+}
+
+.progress-container{
+    width: 100%;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 7px 0 30px 0;
+    cursor: pointer;
+}
+
+.progress-container .progress{
+    width: 0;
+    height: 100%;
+    background: pink;
+    border-radius: 5px;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls button{
+    width: 35px;
+    height: 35px;
+    background: gray;
+    box-shadow: 0.1px 8px 8px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    border:none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button i{
+    color: cornsilk;
+}
+
+.controls button:nth-of-type(3){
+    width: 43px;
+    height: 43px;
+}
+
+.music-container{
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    left: 0;
+    bottom:0;
+
+    transform: translateY(120%);
+
+    transition: 1s;
+}
+
+.music-container.show{
+    transform: translateY(0);
+}
+
+.music-container .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.music-container .header button{
+    background: transparent;
+    border:none;
+}
+
+.music-container .header button i{
+    color: dimgrey;
+    font-size: 18px;
+}
+.music-container .header span{
+    font-size: 18px;
+}
+
+.music-container ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.music-container ul li{
+    width: 90%;
+    margin: 0 auto 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
